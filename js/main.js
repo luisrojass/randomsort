@@ -1,3 +1,6 @@
+// TODO:
+// Add name groups
+
 btnChange.addEventListener('click', () => {
     hideBox(btnChange)
     hideBox(namesList)

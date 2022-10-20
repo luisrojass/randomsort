@@ -18,38 +18,40 @@
 </head>
 
 <body>
-    <div class="container-fluid background-container" id="container">
-        <nav class="navbar bg-light nav-main p-0">
-            <div class="container-fluid justify-content-center">
-                <div class="row row-cols-2">
-                    <div class="col">
-                        <h2 class="navbar-brand mt-2" href="#">
-                            <img src="./img/icon-dark-cube.webp" width="36" height="36"
-                                class="text-center">
-                            PickRandom
-                        </h2>
-                    </div>
-                    <div class="col py-2 my-1 d-inline-flex justify-content-end">
-                        <input type="number" class="form-control d-inline-block" id="nOfNames" value=1 min="1">
-                        <button class="btn btn-primary d-inline-block mx-2" id="btnChoose"><i class="bi bi-shuffle"></i></button>
-                    </div>
+    <div class="container-fluid background-container p-0" id="container">
+        <nav class="d-flex justify-content-center bg-light w-100 py-0">
+            <div class="row row-cols-2">
+                <div class="col">
+                    <h2 class="navbar-brand mt-2" href="#">
+                        <img src="./img/icon-dark-cube.webp" width="36" height="36" class="text-center">
+                        PickRandom
+                    </h2>
+                </div>
+                <div class="col py-2 my-1 d-inline-flex justify-content-end">
+                    <input type="number" class="form-control d-inline-block" id="nOfNames" value=1 min="1">
+                    <button class="btn btn-primary d-inline-block mx-2" id="btnChoose"><i
+                            class="bi bi-shuffle"></i></button>
                 </div>
             </div>
         </nav>
 
-        <div class="alert alert-warning mt-2 mb-0 mx-3" id="alertMsg">
-            Please fill all boxes!
-        </div>
+        <div class="alert alert-warning mt-2 mb-0 mx-3" id="alertMsg"></div>
 
-        <div class="row row-cols-1 row-cols-lg-3 row-cols-xxl-4 g-3 mx-2 pt-3" id="inputsContainer">
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-xxl-4 g-3 mx-2 pt-3 pb-5 mb-5" id="inputsContainer">
             <div class="col d-inline-flex justify-content-center">
                 <button class="btn btn-primary w-75" id="btnAddName"><i class="bi bi-plus-lg"></i></button>
             </div>
         </div>
 
-        <button class="btn btn-primary d-block w-75 mx-auto mt-2" id="changeNames">Change Names</button>
-        <div class="row row-cols-1 row-cols-lg-3 row-cols-xxl-4 g-3 mx-3 pt-3" id="namesList">
-        </div>
+        <button class="btn btn-primary w-75 mx-auto mt-2" id="changeNames">Edit Names</button>
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-xxl-4 g-3 mx-3 pt-3" id="namesList"></div>
+
+        <footer class="d-flex justify-content-center bg-light position-absolute bottom-0 w-100 py-3" id="footer">
+            <p class="text-center text-muted d-block m-1">© 2022 Made by AquaGD</p>
+            <a href="https://www.github.com/aqua-gd" target="_blank" class="link-dark d-block mx-2 h3 my-0" style="height: 2rem;">
+                <i class="bi bi-github"></i>
+            </a>
+        </footer>
     </div>
 
     <script src="./js/functions.js"></script>
