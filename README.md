@@ -3,19 +3,19 @@
 Web app to random sort names `v1.1.0`.
 
 ## Quickstart
-***
+
   * Add names to random sort them.
   * Add groups to save many name lists.
   * To try this app, visit [RandomSort][randomsort-link].
 
 ## Features
-***
+
   * Add names to random sort them, automatically saved in local storage.
   * Add groups to save name lists and use them later.
   * Light and dark mode.
 
 ## Installation
-***
+
 First, import this project with `git clone`:
 
 ```
@@ -53,12 +53,12 @@ $ npm run preview
 ```
 
 ## Contributing
-***
+
 * You can open a issue [here][issue-link] to ask new funcionalities or report bugs.
 * You can clone this repository and make a [pull request][pull-request-link].
 
 ## License
-***
+
 **MIT license:**
 
 Copyright (c) 2023 Luis Rojas: <gamedroidgdyt@gmail.com>
