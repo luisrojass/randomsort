@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom'
 import { AiFillHome } from 'react-icons/ai'
 import { MdGroup } from 'react-icons/md'
 import {
@@ -9,11 +9,11 @@ import {
 } from 'react-icons/bs'
 
 import LinkBtn from './LinkBtn'
-import { useConfig } from '../store/local/useConfig';
-import { useNameList } from '../store/local/useNameList';
-import { useModal } from '../store/temporal/useModal';
+import { useConfig } from '../store/local/useConfig'
+import { useNameList } from '../store/local/useNameList'
+import { useModal } from '../store/temporal/useModal'
 
-function Footer() {
+function Footer (): JSX.Element {
   const { pathname } = useLocation()
   const navigate = useNavigate()
 
@@ -25,43 +25,42 @@ function Footer() {
     <footer className={`position-fixed fixed-bottom w-100 bg-${theme}
     ${theme === 'dark'
         ? 'border-top border-secondary'
-        : 'shadow-lg'}`}>
+        : 'shadow-lg'}`}
+    >
       <div className='btn-toolbar d-flex justify-content-center py-3' role='toolbar'>
 
         {/* DELETE ALL NAMES */}
         {pathname === '/'
           ? <LinkBtn
-            IconLight={BsTrashFill}
-            IconDark={BsTrashFill}
-            action={() => {
-              openModal({
-                msg: "You'll delete all inputs, are you sure?",
-                showBtn: true,
-                action: deleteAllNames
-              })
-            }}
-          />
+              IconLight={BsTrashFill}
+              IconDark={BsTrashFill}
+              action={() => {
+                openModal({
+                  msg: "You'll delete all inputs, are you sure?",
+                  showBtn: true,
+                  action: deleteAllNames
+                })
+              }}
+            />
           : null}
 
         {/* GO TO GROUPS PAGE */}
         {pathname !== '/groups'
           ? <LinkBtn
-            IconLight={MdGroup}
-            IconDark={MdGroup}
-            action={() => navigate('/groups')}
-          />
+              IconLight={MdGroup}
+              IconDark={MdGroup}
+              action={() => navigate('/groups')}
+            />
           : null}
-
 
         {/* GO TO HOME PAGE */}
         {pathname !== '/'
           ? <LinkBtn
-            IconLight={AiFillHome}
-            IconDark={AiFillHome}
-            action={() => navigate('/')}
-          />
+              IconLight={AiFillHome}
+              IconDark={AiFillHome}
+              action={() => navigate('/')}
+            />
           : null}
-
 
         {/* CHANGE THEME */}
         <LinkBtn

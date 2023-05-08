@@ -15,14 +15,14 @@ import SortPage from './pages/SortPage'
 import NotFoundPage from './pages/NotFoundPage'
 import Modal from './components/Modal'
 
-function App() {
+function App (): JSX.Element {
   const { theme } = useConfig()
 
   return (
     <div style={{ height: '100vh' }} className={`bg-${theme}`}>
 
       <BrowserRouter>
-        <div className="container-fluid h-100 p-5">
+        <div className='container-fluid h-100 p-5'>
           <Header />
 
           <Routes>

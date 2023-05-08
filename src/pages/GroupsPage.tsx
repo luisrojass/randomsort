@@ -5,9 +5,8 @@ import { useGroupList } from '../store/local/useGroupList'
 import GroupCard from '../components/GroupCard'
 import BtnAdd from '../components/BtnAdd'
 
-function GroupList() {
-
-  const {theme} = useConfig()
+function GroupList (): JSX.Element {
+  const { theme } = useConfig()
   const {
     groupList,
     createGroup
@@ -17,13 +16,14 @@ function GroupList() {
 
   return (
     <>
-      <h2 className={`mt-5 text-center text-bg-${theme}`}>Groups</h2>
+      <h2 className={`mt-5 text-center text-${theme === 'dark' ? 'light' : 'dark'}`}>Groups</h2>
 
       <div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row-cols-xxl-5 gx-3 mt-4 px-3 px-lg-5'>
         <BtnAdd action={() => {
           createGroup()
           navigate('/edit-group')
-        }} />
+        }}
+        />
         {groupList.map((group, i) => (
           <GroupCard key={group.id} group={group} index={i} />
         ))}

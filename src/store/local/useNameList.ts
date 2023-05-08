@@ -2,9 +2,9 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 import { GroupInput, NameInput } from '../../types/types'
-import { createId } from '../../functions/createId'
+import { createId } from '../../utilities/createId'
 
-type NameList = {
+interface NameList {
   nameList: NameInput[]
 
   createName: () => void
@@ -29,7 +29,7 @@ export const useNameList = create(
         set(state => ({
           nameList: [{
             id: createId(),
-            name: '',
+            name: ''
           }, ...state.nameList]
         }))
       },
@@ -51,18 +51,18 @@ export const useNameList = create(
       },
 
       deleteAllNames: () => {
-        set(state => ({
+        set(() => ({
           nameList: []
         }))
       },
 
       selectGroup: (group) => {
-        set(state => ({
+        set(() => ({
           nameList: group.members
         }))
       }
     }),
     {
-      name: 'pick-random:NAMELIST'
+      name: 'randomsort:NAMELIST'
     })
 )

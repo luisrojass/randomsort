@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-type Config = {
+interface Config {
   theme: string
   showInfo: boolean
   quantityToSort: number
@@ -25,18 +25,18 @@ export const useConfig = create(
       },
 
       changeQuantityToSort: (quantity) => {
-        set(state => ({
+        set(() => ({
           quantityToSort: quantity
         }))
       },
 
       disableShowInfo: () => {
-        set(state => ({
+        set(() => ({
           showInfo: false
         }))
       }
     }),
     {
-      name: 'pick-random:CONFIG'
+      name: 'randomsort:CONFIG'
     })
 )

@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { ModalConfig } from '../../types/types'
 
-type Modal = {
+interface Modal {
   modalConfig: ModalConfig
   openModal: (config: ModalConfig) => void
 }
@@ -23,7 +23,6 @@ export const useModal = create<Modal>(
         }
       }))
       document.getElementById('launchModal')?.click()
-      
     }
   })
 )

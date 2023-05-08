@@ -7,15 +7,19 @@ interface LinkBtn {
   action: () => void
 }
 
-function FooterBtn({ IconLight, IconDark, action }: LinkBtn) {
+function FooterBtn (
+  { IconLight, IconDark, action }: LinkBtn
+): JSX.Element {
   const { theme } = useConfig()
 
   return (
-    <button style={{ width: '3rem' }}
-      className={`btn border-0 mx-2 my-0 py-0`}
-      onClick={action}>
+    <button
+      style={{ width: '3rem' }}
+      className='btn border-0 mx-2 my-0 py-0'
+      onClick={action}
+    >
 
-      <h2 className={`h2 text-bg-${theme}`}>
+      <h2 className={`h2 text-${theme === 'dark' ? 'light' : 'dark'}`}>
         {theme === 'dark' ? <IconLight /> : <IconDark />}
       </h2>
     </button>

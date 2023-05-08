@@ -2,9 +2,9 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 import { GroupInput } from '../../types/types'
-import { createId } from '../../functions/createId'
+import { createId } from '../../utilities/createId'
 
-type GroupList = {
+interface GroupList {
   // Group list
   groupList: GroupInput[]
 
@@ -26,11 +26,13 @@ type GroupList = {
   deleteNameInGroup: (id: string) => void
 }
 
-const updateGroupList = (groupList: GroupInput[], currentGroup: GroupInput) => {
+const updateGroupList = (
+  groupList: GroupInput[],
+  currentGroup: GroupInput
+): GroupInput[] => {
   return groupList.map(group => {
     if (group.id !== currentGroup.id) return group
-
-    return currentGroup
+    else return currentGroup
   })
 }
 
@@ -50,7 +52,7 @@ export const useGroupList = create(
             id: createId(),
             title: '',
             members: [{ id: createId(), name: '' }]
-          }, ...state.groupList],
+          }, ...state.groupList]
         }))
 
         set(state => ({
@@ -66,7 +68,7 @@ export const useGroupList = create(
 
       // Current group
       setCurrentGroup: (group) => {
-        set(state => ({
+        set(() => ({
           currentGroup: group
         }))
       },
@@ -77,7 +79,7 @@ export const useGroupList = create(
             id,
             title,
             members: state.currentGroup.members
-          },
+          }
         }))
 
         set(state => ({
@@ -92,7 +94,7 @@ export const useGroupList = create(
             title: state.currentGroup.title,
             members: [{
               id: createId(),
-              name: '',
+              name: ''
             }, ...state.currentGroup.members]
           }
         }))
@@ -135,6 +137,6 @@ export const useGroupList = create(
       }
     }),
     {
-      name: 'pick-random:GROUPLIST'
+      name: 'randomsort:GROUPLIST'
     })
 )
