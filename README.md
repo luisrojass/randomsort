@@ -64,4 +64,4 @@ Copyright (c) 2023 Luis Rojas S.
 [web-link]: https://randomsort.netlify.app
 [issue-link]: https://github.com/luisrojass/randomsort/issues
 [pull-request-link]: https://github.com/luisrojass/randomsort/pulls
-[license-link]: https://github.com/luisrojass/randomsort/blob/main/LICENSE
+[license-link]: https://github.com/luisrojass/randomsort/blob/master/LICENSE
