@@ -3,11 +3,6 @@ import { useModal } from '../store/temporal/useModal'
 function Modal (): JSX.Element {
   const { modalConfig } = useModal()
 
-  // const btn = document.getElementById('launchModal') as HTMLButtonElement
-  // console.log(btn)
-  // const open = () => {
-  // }
-
   return (
     <>
       {/* Button trigger modal */}
@@ -39,7 +34,7 @@ function Modal (): JSX.Element {
                   ? (
                     <button
                       type='button' className='btn btn-danger mx-2'
-                      data-bs-dismiss='modal' onClick={() => modalConfig.action}
+                      data-bs-dismiss='modal' onClick={() => modalConfig.action()}
                     >
                       Continue
                     </button>

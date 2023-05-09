@@ -6,7 +6,7 @@ import {
 
 import { useConfig } from './store/local/useConfig'
 import Header from './components/Header'
-import Navbar from './components/Navbar'
+import Navbar from './components/Footer'
 
 import HomePage from './pages/HomePage'
 import GroupsPage from './pages/GroupsPage'

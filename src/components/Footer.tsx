@@ -73,7 +73,7 @@ function Footer (): JSX.Element {
         <LinkBtn
           IconLight={BsGithub}
           IconDark={BsGithub}
-          action={() => window.location.assign('https://github.com/luisrojass')}
+          action={() => window.location.assign('https://github.com/luisrojass/randomsort')}
         />
       </div>
     </footer>
